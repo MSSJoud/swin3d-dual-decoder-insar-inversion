@@ -1,6 +1,6 @@
 {
   "input": {
-    "path": "data/deformation_stack.h5",
+    "path": "sample_data/punjab_real_sample.h5",
     "format": "hdf5",
     "variable": "z",
     "transpose_order": [0, 1, 2],
@@ -19,7 +19,7 @@
     "output_dir": "runs/example_h5",
     "seed": 42,
     "batch_size": 4,
-    "epochs": 10,
+    "epochs": 3,
     "learning_rate": 0.0001,
     "val_fraction": 0.2,
     "shuffle_train": false,
@@ -52,4 +52,3 @@
     "a_poro": 3000.0
   }
 }
-

@@ -47,3 +47,7 @@ def main() -> None:
         return
 
     raise RuntimeError(f"Unhandled command: {args.command}")
+
+
+if __name__ == "__main__":
+    main()

@@ -35,7 +35,7 @@ Inspect your dataset:
 
 ```bash
 docker run --rm \
-  -v $(pwd)/example_data:/workspace/data \
+  -v $(pwd)/sample_data:/workspace/sample_data \
   -v $(pwd)/runs:/workspace/runs \
   swin3d-dual-decoder-insar-inversion \
   inspect --config configs/example_netcdf_train.json
@@ -45,7 +45,7 @@ Train:
 
 ```bash
 docker run --rm \
-  -v $(pwd)/example_data:/workspace/data \
+  -v $(pwd)/sample_data:/workspace/sample_data \
   -v $(pwd)/runs:/workspace/runs \
   swin3d-dual-decoder-insar-inversion \
   train --config configs/example_netcdf_train.json
@@ -55,7 +55,7 @@ Predict:
 
 ```bash
 docker run --rm \
-  -v $(pwd)/example_data:/workspace/data \
+  -v $(pwd)/sample_data:/workspace/sample_data \
   -v $(pwd)/runs:/workspace/runs \
   swin3d-dual-decoder-insar-inversion \
   predict --config configs/example_netcdf_train.json --checkpoint runs/example/checkpoints/best.pt
@@ -81,6 +81,8 @@ swin3d-insar-inversion predict --config configs/example_netcdf_train.json --chec
   Core package
 - `configs/`
   Example JSON configs for NetCDF and HDF5 inputs
+- `sample_data/`
+  Small bundled real-data example subset
 - `Dockerfile`
   Container build
 - `docker-compose.yml`
@@ -106,3 +108,4 @@ with stitched `S0_pred`, `Sg_pred`, and `prediction_count`.
 - `S0` and `Sg` are model outputs in the inversion state space. Their physical interpretation depends on the training formulation and the scaling of the forward physics.
 - The default training workflow is unsupervised with respect to the latent storage fields. It uses observed deformation for forward-consistency plus regularization terms.
 - The package is intentionally smaller and cleaner than the Punjab working repository.
+- The repository includes a tiny real Punjab subset in `sample_data/punjab_real_sample.h5` so the inspect/train/predict path can be tested immediately.

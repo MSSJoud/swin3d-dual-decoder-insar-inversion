@@ -3,8 +3,7 @@ services:
     build: .
     image: swin3d-dual-decoder-insar-inversion:latest
     volumes:
-      - ./example_data:/workspace/data
+      - ./sample_data:/workspace/sample_data
       - ./runs:/workspace/runs
     working_dir: /workspace
-    command: ["inspect", "--config", "configs/example_netcdf_train.json"]
-
+    command: ["inspect", "--config", "configs/example_hdf5_train.json"]

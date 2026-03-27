@@ -12,3 +12,5 @@ example_data
 *.npy
 *.npz
 
+!sample_data/punjab_real_sample.h5
+!sample_data/README.md

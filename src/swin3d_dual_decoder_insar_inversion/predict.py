@@ -13,7 +13,7 @@ from .models import DualDecoderFrequencySeparatedSwinUNet3D
 
 
 def _load_model(checkpoint_path: str | Path, config: InversionConfig, device: torch.device):
-    payload = torch.load(checkpoint_path, map_location=device)
+    payload = torch.load(checkpoint_path, map_location=device, weights_only=False)
     model = DualDecoderFrequencySeparatedSwinUNet3D(
         base_dim=config.model.base_dim,
         time_patch=config.model.time_patch,

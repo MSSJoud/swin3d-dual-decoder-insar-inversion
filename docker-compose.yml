@@ -1,0 +1,10 @@
+services:
+  inversion:
+    build: .
+    image: swin3d-dual-decoder-insar-inversion:latest
+    volumes:
+      - ./example_data:/workspace/data
+      - ./runs:/workspace/runs
+    working_dir: /workspace
+    command: ["inspect", "--config", "configs/example_netcdf_train.json"]
+

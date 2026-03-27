@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "SWIN3D Dual-Decoder InSAR Inversion"
+message: "If you use this software, please cite the repository and the associated paper."
+type: software
+authors:
+  - family-names: "Joud"
+    given-names: "Mehdi"
+repository-code: "https://github.com/MSSJoud/swin3d-dual-decoder-insar-inversion"
+license: "MIT"

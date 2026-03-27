@@ -1,0 +1,55 @@
+{
+  "input": {
+    "path": "data/deformation_stack.nc",
+    "format": "netcdf",
+    "variable": "deformation",
+    "dim_order": ["time", "lat", "lon"],
+    "time_name": "time",
+    "lat_name": "lat",
+    "lon_name": "lon",
+    "mask_variable": null
+  },
+  "tiling": {
+    "window_size": 12,
+    "tile_size": 64,
+    "stride": 64,
+    "min_valid_fraction": 0.05
+  },
+  "training": {
+    "output_dir": "runs/example",
+    "seed": 42,
+    "batch_size": 4,
+    "epochs": 10,
+    "learning_rate": 0.0001,
+    "val_fraction": 0.2,
+    "shuffle_train": false,
+    "lambda_forward": 1.0,
+    "lambda_spatial_s0": 0.01,
+    "lambda_spatial_sg": 0.01,
+    "lambda_temporal_s0": 0.005,
+    "lambda_temporal_sg": 0.005,
+    "num_workers": 0
+  },
+  "model": {
+    "base_dim": 32,
+    "time_patch": 2,
+    "spatial_patch": 4,
+    "num_heads": 4,
+    "window_size": [3, 4, 4],
+    "merge_scale": [1, 2, 2]
+  },
+  "physics": {
+    "E": 1000000000.0,
+    "nu": 0.25,
+    "rho_w": 1000.0,
+    "g": 9.81,
+    "alpha": 0.8,
+    "Hg": 150.0,
+    "Seff": 0.2,
+    "dx": 10000.0,
+    "dy": 10000.0,
+    "a_load": 3000.0,
+    "a_poro": 3000.0
+  }
+}
+

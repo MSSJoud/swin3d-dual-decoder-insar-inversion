@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swin3d-dual-decoder-insar-inversion"
+version = "0.1.0"
+description = "Docker-friendly SWIN3D dual-decoder inversion package for NetCDF/HDF5 InSAR deformation stacks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Mehdi Joud"}
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "xarray>=2023.1.0",
+  "h5py>=3.9",
+  "netCDF4>=1.6",
+  "scipy>=1.10",
+  "torch>=2.2",
+]
+
+[project.scripts]
+swin3d-insar-inversion = "swin3d_dual_decoder_insar_inversion.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

@@ -1,0 +1,14 @@
+.git
+__pycache__
+.ipynb_checkpoints
+runs
+data
+example_data
+*.nc
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.npy
+*.npz
+
